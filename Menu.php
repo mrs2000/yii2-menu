@@ -1,5 +1,5 @@
 <?
-namespace app\widgets;
+namespace mrssoft\menu;
 
 use Yii;
 use yii\base\InvalidConfigException;
