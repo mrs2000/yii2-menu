@@ -16,7 +16,7 @@ php composer.phar require --prefer-dist mrssoft/yii2-menu "dev-master"
 
 or add
 
-```json
+```
 "mrssoft/yii2-menu": "dev-master"
 ```
 

@@ -1,4 +1,5 @@
-<?
+<?php
+
 namespace mrssoft\menu;
 
 use Yii;
@@ -62,26 +63,29 @@ class Menu extends Widget
 
         foreach ($this->items as $item) {
 
-            if (!array_key_exists('label', $item)) {
-                throw new InvalidConfigException('The "label" element is required for each link.');
-            }
+            if ($item) {
 
-            if (array_key_exists('url', $item)) {
-                $options = [];
-                if (count($item) > 2) {
-                    $options = array_splice($item, 2);
+                if (array_key_exists('label', $item) === false) {
+                    throw new InvalidConfigException('The "label" element is required for each link.');
                 }
-                $a = Html::a($item['label'], $item['url'], $options);
-            } else {
-                $a = $item['label'];
-            }
 
-            $options = [];
-            if ($this->isActive($item)) {
-                $options = ['class' => 'active'];
-            }
+                if (array_key_exists('url', $item)) {
+                    $options = [];
+                    if (count($item) > 2) {
+                        $options = array_splice($item, 2);
+                    }
+                    $a = Html::a($item['label'], $item['url'], $options);
+                } else {
+                    $a = $item['label'];
+                }
 
-            echo Html::tag('li', $a, $options);
+                $options = [];
+                if ($this->isActive($item)) {
+                    $options = ['class' => 'active'];
+                }
+
+                echo Html::tag('li', $a, $options);
+            }
         }
 
         echo Html::endTag('ul');
