@@ -1,5 +1,6 @@
 {
     "name": "mrssoft/yii2-menu",
+    "version": "1.0.2",
     "description": "Yii2 menu widget",
     "type": "yii2-extension",
     "keywords": ["yii2","extension", "menu", "widget"],
